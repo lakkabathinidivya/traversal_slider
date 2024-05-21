@@ -1,0 +1,1 @@
+enum SliderType { bottomSlider, centerSlider }
