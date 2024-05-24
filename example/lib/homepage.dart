@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   int currentIndex = 0;
+
   List<String> foodImages = [
     'assets/images/salad2.png',
     'assets/images/pasta.png',
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage>
                   widgets: List.generate(
                     foodImages.length,
                     (index) => Image.asset(
-                      foodImages[index],
+                      foodImages[currentIndex],
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -28,29 +30,42 @@ class TraversalSlider extends StatefulWidget {
 class _TraversalSliderState extends State<TraversalSlider>
     with SingleTickerProviderStateMixin {
   double _turns = 0.0;
-
   double _rotationAngle = 0.0;
   late AnimationController controller;
+  var isClicked = false;
+  int currentIndex = 1;
+  late Timer _timer;
 
-  int currentIndex = 0;
+  _startTimer() {
+    _timer = Timer(const Duration(milliseconds: 1000), () => isClicked = false);
+  }
 
   void rotateAndDisplayNextImage({int? index}) {
-    if (widget.sliderType == SliderType.bottomSlider) {
-      setState(() {
-        _turns += 1; // Rotate by 90 degrees
-        controller.forward(from: 0);
-      });
+    if (isClicked == false) {
+      _startTimer();
+      isClicked = true;
+      // Your other code which you want to execute on click.
 
-      // Delay displaying the next image until the rotation animation is complete
-      Future.delayed(controller.duration!, () {
+      if (widget.sliderType == SliderType.bottomSlider) {
         setState(() {
-          currentIndex = (currentIndex + 1) % widget.widgets.length;
-          _rotationAngle = 90; // Reset rotation angle
+          _turns += 1;
+          print('prints --$_turns');
+
+          // Rotate by 90 degrees
+          //controller.forward(from: );
         });
-      });
+
+        // Delay displaying the next image until the rotation animation is complete
+        Future.delayed(controller.duration!, () {
+          setState(() {
+            currentIndex = (currentIndex + 1) % widget.widgets.length;
+            _rotationAngle = 10; // Reset rotation angle
+          });
+        });
+      }
     } else {
       currentIndex = index ?? 0;
-      setState(() {});
+      //setState(() {});
     }
 
     widget.onIndexChanged(currentIndex);
@@ -119,7 +134,7 @@ class _TraversalSliderState extends State<TraversalSlider>
               alignment: Alignment.bottomCenter,
               turns: _turns,
               duration: const Duration(seconds: 1),
-              child: GestureDetector(
+              child: InkWell(
                 onTap: rotateAndDisplayNextImage,
                 child: ClipRect(
                   child: Align(
