@@ -22,27 +22,6 @@ For help getting started with Flutter, view the online [documentation](https://f
 
 ## Example
 
-Single View Slider implementation
-
-```dart
-TraversalSliderWidget(
-   widgets: List.generate(
-       foodImages.length,
-       (index) => Image.asset(
-          foodImages[index],
-          fit: BoxFit.cover,
-        ),
-      ),
-   sliderType: SliderType.singleViewSlider,
-   onIndexChanged: (value) {
-     currentIndex = value;
-     setState(() {});
-   },
-  ),
-```
-
-![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
-
 
 Multiple View Slider implementation
 
@@ -64,6 +43,29 @@ TraversalSliderWidget(
 ```
 
 ![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/multipleViewSlider.gif)
+
+
+
+Single View Slider implementation
+
+```dart
+TraversalSliderWidget(
+   widgets: List.generate(
+       foodImages.length,
+       (index) => Image.asset(
+          foodImages[index],
+          fit: BoxFit.cover,
+        ),
+      ),
+   sliderType: SliderType.singleViewSlider,
+   onIndexChanged: (value) {
+     currentIndex = value;
+     setState(() {});
+   },
+  ),
+```
+
+![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
 
 
 ## Options
