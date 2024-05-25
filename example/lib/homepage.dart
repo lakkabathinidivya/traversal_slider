@@ -62,59 +62,63 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Container(
-        width: double.maxFinite,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/foodappbg.jpg'),
-            fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Container(
+          width: double.maxFinite,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/foodappbg.jpg'),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: ClipRRect(
-          // make sure we apply clip it properly
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 120,
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: Text(
-                    foodNames[currentIndex].title,
-                    style: const TextStyle(
-                        color: Colors.white, fontSize: 30, letterSpacing: 1),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: Text(
-                    foodNames[currentIndex].description,
-                    style: const TextStyle(
-                        color: Colors.white, fontSize: 16, letterSpacing: 1),
-                  ),
-                ),
-                const Spacer(),
-                TraversalSlider(
-                  widgets: List.generate(
-                    foodImages.length,
-                    (index) => Image.asset(
-                      foodImages[currentIndex],
-                      fit: BoxFit.cover,
+          child: ClipRRect(
+            // make sure we apply clip it properly
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // const SizedBox(
+                  //   height: 120,
+                  // ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
+                    child: Text(
+                      foodNames[currentIndex].title,
+                      style: const TextStyle(
+                          color: Colors.white, fontSize: 30, letterSpacing: 1),
                     ),
                   ),
-                  onIndexChanged: (value) {
-                    currentIndex = value;
-                    setState(() {});
-                  },
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
+                    child: Text(
+                      foodNames[currentIndex].description,
+                      style: const TextStyle(
+                          color: Colors.white, fontSize: 16, letterSpacing: 1),
+                    ),
+                  ),
+                  const Spacer(),
+
+                  TraversalSlider(
+                    widgets: List.generate(
+                      foodImages.length,
+                      (index) => Image.asset(
+                        foodImages[index],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    sliderType: SliderType.multipleViewSlider,
+                    onIndexChanged: (value) {
+                      currentIndex = value;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

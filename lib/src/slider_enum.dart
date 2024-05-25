@@ -1,1 +1,1 @@
-enum SliderType { bottomSlider, centerSlider }
+enum SliderType { singleViewSlider, multipleViewSlider }
