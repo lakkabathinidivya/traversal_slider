@@ -1,6 +1,6 @@
 # traversal_slider
 
-This is a package created in the style of the instagram reels viewer, with which you can pass video url and get reels view.
+The traversal_slider package is a Flutter widget that allows for the smooth and animated traversal of widgets in a circular rotation.
 
 ## Usage
 
@@ -22,7 +22,7 @@ For help getting started with Flutter, view the online [documentation](https://f
 
 ## Example
 
-Simple implementation
+Single View Slider implementation
 
 ```dart
 TraversalSliderWidget(
@@ -33,6 +33,7 @@ TraversalSliderWidget(
           fit: BoxFit.cover,
         ),
       ),
+   sliderType: SliderType.singleViewSlider,
    onIndexChanged: (value) {
      currentIndex = value;
      setState(() {});
@@ -40,14 +41,36 @@ TraversalSliderWidget(
   ),
 ```
 
+![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
+
+
+Multiple View Slider implementation
+
+```dart
+TraversalSliderWidget(
+   widgets: List.generate(
+       foodImages.length,
+       (index) => Image.asset(
+          foodImages[index],
+          fit: BoxFit.cover,
+        ),
+      ),
+   sliderType: SliderType.multipleViewSlider,
+   onIndexChanged: (value) {
+     currentIndex = value;
+     setState(() {});
+   },
+  ),
+```
+
+![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/multipleViewSlider.gif)
+
+
 ## Options
 
-|          Name         |           Description               |   Default    |        Return          |
-| :-------------------: | :---------------------------------: | :----------: |  :------------------:  |
-| widgets               | For assign widgets list             |     `[]`     |           -            |
-| onIndexChange         | Trigger when widget animate/change  |      -       | `current widget index' | 
+|          Name         |           Description               |          Default              |        Return          |
+| :-------------------: | :---------------------------------: | :----------:                  |  :------------------:  |
+| widgets               | For assign widgets list             |     `[]`                      |           -            |
+| sliderType            | For Different Slider Types          | `SliderType.singleViewSlider` |           -            | 
+| onIndexChange         | Trigger when widget animate/change  |      -                        | `current widget index` | 
 
-
-## Demo video
-
-[Click here](https://firebasestorage.googleapis.com/v0/b/reels-viwer.appspot.com/o/screenshot_video.mp4?alt=media&token=37c69d1b-1ec9-412d-8b4c-e42dbc99660f) for watch demo video.
