@@ -1,6 +1,6 @@
 name: traversal_slider
-description: "A new Flu"
-version: 1.0.0
+description: "The traversal_slider package is a Flutter widget that allows for the smooth and animated traversal of widgets in a circular rotation."
+version: 1.0.1
 homepage: https://github.com/lakkabathinidivya/traversal_slider
 
 environment:
@@ -15,6 +15,16 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+
+
+platforms:
+  android:
+  ios:
+  web:
+  linux:
+  macos:
+  windows:  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

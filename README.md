@@ -9,7 +9,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  traversal_slider: ^1.0.0
+  traversal_slider: ^1.0.1
 ```
 
 In your library add the following import:
@@ -41,7 +41,7 @@ TraversalSliderWidget(
   ),
 ```
 
-<img src="singleViewSlider.gif?raw=true" width="200px" height="400px">
+![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
 
 
 Multiple View Slider implementation
@@ -63,7 +63,7 @@ TraversalSliderWidget(
   ),
 ```
 
-<img src="multipleViewSlider.gif?raw=true" width="200px" height="400px">
+![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/multipleViewSlider.gif)
 
 
 ## Options
