@@ -41,7 +41,7 @@ TraversalSliderWidget(
   ),
 ```
 
-![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
+<img src="singleViewSlider.gif?raw=true" width="200px" height="300px">
 
 
 Multiple View Slider implementation
