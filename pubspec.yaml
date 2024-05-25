@@ -1,6 +1,6 @@
 name: traversal_slider
 description: "The traversal_slider package is a Flutter widget that allows for the smooth and animated traversal of widgets in a circular rotation."
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/lakkabathinidivya/traversal_slider
 
 environment:

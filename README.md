@@ -9,7 +9,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  traversal_slider: ^1.0.1
+  traversal_slider: ^1.0.2
 ```
 
 In your library add the following import:
@@ -42,7 +42,7 @@ TraversalSliderWidget(
   ),
 ```
 
-![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/multipleViewSlider.gif)
+![me](https://firebasestorage.googleapis.com/v0/b/traversalslider.appspot.com/o/multipleViewSlider.gif?alt=media&token=1fab414e-51f7-4dad-9468-2071282ba03c)
 
 
 
@@ -65,7 +65,7 @@ TraversalSliderWidget(
   ),
 ```
 
-![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/singleViewSlider.gif)
+![me](https://firebasestorage.googleapis.com/v0/b/traversalslider.appspot.com/o/singleViewSlider.gif?alt=media&token=3035c76b-d360-4f4e-b497-5e2d0f02256d)
 
 
 ## Options
