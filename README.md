@@ -41,7 +41,7 @@ TraversalSliderWidget(
   ),
 ```
 
-<img src="singleViewSlider.gif?raw=true" width="200px" height="300px">
+<img src="singleViewSlider.gif?raw=true" width="200px" height="400px">
 
 
 Multiple View Slider implementation
@@ -63,7 +63,7 @@ TraversalSliderWidget(
   ),
 ```
 
-![me](https://github.com/lakkabathinidivya/traversal_slider/blob/master/multipleViewSlider.gif)
+<img src="multipleViewSlider.gif?raw=true" width="200px" height="400px">
 
 
 ## Options
@@ -72,5 +72,5 @@ TraversalSliderWidget(
 | :-------------------: | :---------------------------------: | :----------:                  |  :------------------:  |
 | widgets               | For assign widgets list             |     `[]`                      |           -            |
 | sliderType            | For Different Slider Types          | `SliderType.singleViewSlider` |           -            | 
-| onIndexChange         | Trigger when widget animate/change  |      -                        | `current widget index` | 
+| onIndexChange         | Trigger when widget animate/change  |             0                 | `current widget index` | 
 
